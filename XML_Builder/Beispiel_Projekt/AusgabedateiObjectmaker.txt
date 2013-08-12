@@ -1,0 +1,4 @@
+C:/Users/Administrator/Documents/GitHub/XMLBuilder/XML_Builder/Beispiel_Projekt/Testbilder/Bild1021.jpg 1 371 127 40 91
+C:/Users/Administrator/Documents/GitHub/XMLBuilder/XML_Builder/Beispiel_Projekt/Testbilder/Bild2131.jpg 1 340 161 34 84
+C:/Users/Administrator/Documents/GitHub/XMLBuilder/XML_Builder/Beispiel_Projekt/Testbilder/Bild2161.jpg 1 380 165 35 86
+C:/Users/Administrator/Documents/GitHub/XMLBuilder/XML_Builder/Beispiel_Projekt/Testbilder/Bild2191.jpg 1 380 165 35 86

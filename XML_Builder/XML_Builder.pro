@@ -54,35 +54,14 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui
 
-win32: INCLUDEPATH += C:/opencv_2_4_0/build/include
-win32: DEPENDPATH += C:/opencv_2_4_0/build/include
-#win32: INCLUDEPATH += C:/opencv_2_4_0/apps
-#win32: DEPENDPATH += C:/opencv_2_4_0/apps
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_highgui240.dll
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_core240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_haartraining_engine
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_video240.dll
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_imgproc240.dll
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_features2d240.dll
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_flann240.dll
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_legacy240.dll
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_objdetect240.dll
-win32: LIBS += -LC:/opencv_2_4_0/mingw_4_4_0/release/lib -lopencv_calib3d240.dll
-
-
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_calib3d240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_contrib240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_core240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_features2d240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_flann240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_gpu240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_highgui240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_imgproc240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_legacy240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_ml240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_nonfree240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_objdetect240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_photo240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_stitching240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_video240.dll
-#win32: LIBS += -LC:/opencv_2_4_0/build/x86/mingw/lib -lopencv_videostab240.dll
+win32: INCLUDEPATH += ./include
+win32: DEPENDPATH += ./include
+win32: LIBS += -L./lib -lopencv_highgui240.dll
+win32: LIBS += -L./lib -lopencv_core240.dll
+win32: LIBS += -L./lib -lopencv_video240.dll
+win32: LIBS += -L./lib -lopencv_imgproc240.dll
+win32: LIBS += -L./lib -lopencv_features2d240.dll
+win32: LIBS += -L./lib -lopencv_flann240.dll
+win32: LIBS += -L./lib -lopencv_legacy240.dll
+win32: LIBS += -L./lib -lopencv_objdetect240.dll
+win32: LIBS += -L./lib -lopencv_calib3d240.dll

@@ -1,0 +1,3263 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\lhead{} 
+
+\chead{}
+
+\rhead{}
+
+\lfoot{}
+
+\cfoot{}
+
+\rfoot{}
+
+\renewcommand{\headrulewidth} {0.0pt} 
+\renewcommand{\footrulewidth} {0.0pt} 
+
+\usepackage{multicol}
+\date{}
+\setcounter{page}{1}		%Nummerierung bei {k}-beginnen
+
+\usepackage{fancyhdr}		%eigener Seitenstil
+\pagestyle{fancy}
+\pagestyle{fancyplain}
+\usepackage{lastpage}		%Nummer der letzten Seite
+\usepackage[ngerman]{babel}	%deutsche Silbentrennung 
+\usepackage{xcolor}
+
+
+\usepackage{amsmath}
+
+%neue float Umgebung für Anlagenverzeichnisn nach Haupttext
+\newfloat{Anlage}{htb}{loAn}
+
+%Umbenennen von Literatur in Literatur- und Quellenverzeichnis
+\addto\captionsngerman{
+\renewcommand{\bibname}{Literatur- und Quellenverzeichnis}%
+\renewcommand{\refname}{Literatur- und Quellenverzeichnis}}
+
+%Umbenennen des Nomenklaturverzeichnis in Abkürzungsverzeichnis
+\addto\captionsngerman{ 
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+}
+
+%für Quellenangabe von Internetquellen
+\usepackage{url}
+%für Zeilenumbruch in url
+\usepackage{breakurl}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family sfdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Ein Programm zur Erstellung von Klassifikatoren zur Objekterkennung in Bildern
+\end_layout
+
+\begin_layout Author
+Michael Stahr
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+theequation}{
+\backslash
+arabic{section}.
+\backslash
+arabic{equation}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+numberwithin{equation}{section}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+sectionmark}[1]{
+\backslash
+markboth{#1}{}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead{{
+\backslash
+fancyplain{}{{
+\backslash
+leftmark}}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+headrulewidth}{0.4pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+rfoot{
+\backslash
+thepage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+footrulewidth}{0.4pt}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+linespread{1.3}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{Roman}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Inhaltsverzeichnis}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+nomname}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead{{ABKÜRZUNGSVERZEICHNIS}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead{{
+\backslash
+fancyplain{}{{
+\backslash
+leftmark}}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Tabellenverzeichnis}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead{{
+\backslash
+thesection
+\backslash
+ 
+\backslash
+fancyplain{}{{
+\backslash
+leftmark}}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Einleitung
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In der digitalen Bildverarbeitung stellt sich häufig die Aufgabe bestimmte
+ Objekte in Bildern zu finden.
+ Dafür bietet sich das Verfahren der Mustererkennung an.
+ Das diese Aufgaben in der Praxis bereits gelöst werden können, zeigen z.B.
+ die Gesichtserkennung oder die Erkennung von Fahrzeugen aus der Frontansicht
+ wie in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IIS18.04.2013"
+
+\end_inset
+
+ oder der Heckansicht in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Degenkolbe2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Hierfür werden Klassifikatoren eingesetzt, die anhand eines umfangreichen
+ Datenmaterials aus positiven und negativen Testbildern (jeweils >1000 Stück)
+ durch maschinelle Lernverfahren trainiert und somit erzeugt werden können.
+ Als Positive versteht man hierbei diejenigen Testbilder, in denen das zu
+ erkennende Objekt vorkommt und als Negative, die Bilder in denen alles
+ - außer das interessierende Objekt - auftauchen darf.
+ Genauere Informationen zum maschinellen Lernen und Trainieren eines Klassifikat
+ors kann man z.B.
+ in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Viola18.04.2013"
+
+\end_inset
+
+ erfahren.
+ Das Sortieren und Überprüfen der Testbilder sowie die Merkmalsextraktion
+ aus den Positiven muss hauptsächlich manuell erfolgen und erfordert daher
+ eine Menge Zeit und Konzentration.
+ Erst danach kann der Algorithmus zum Einsatz kommen, der den Klassifikator
+ erstellt.
+ Der Klassifikator wird in Form einer XML-Datei bereit gestellt, wodurch
+ das hier vorgestellte Programm auch seinen Namen 
+\begin_inset Quotes gld
+\end_inset
+
+XML Builder
+\begin_inset Quotes grd
+\end_inset
+
+ trägt.
+ 
+\end_layout
+
+\begin_layout Standard
+In der freien Programmbibliothek OpenCV
+\series bold
+ 
+\series default
+stehen die hierfür benötigten Algorithmen zur Verfügung.
+ Diese sind im wesentlichen drei Stück und wurden mit der Programmiersprache
+ C++ implementiert.
+ Als erstes verwendet man das Programm 
+\emph on
+Objectmaker 
+\emph default
+aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Achu18.04.2013"
+
+\end_inset
+
+ um aus den positiven Testbildern das interessierende Objekt zu extrahieren.
+ Als zweites wird mit dem Programm 
+\emph on
+Createsamples 
+\emph default
+aus den extrahierten Bildausschnitten eine VEC-Datei erstellt, die für das
+ dritte Programm 
+\emph on
+Traincascade 
+\emph default
+benötigt wird um sodann den Klassifikator zu trainieren.
+ Nähere Information diesbezüglich findet man in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OPENCV18.04.2013"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Degenkolbe2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Die erwähnten drei Programme stehen in Form einer Konsolenanwendung zur
+ Verfügung.
+ Aus diesem Grunde ist das Programm in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Vorstellung-des-Konsolenprogramm"
+
+\end_inset
+
+ ebenfalls ein Konsolenprogramm.
+ Momentan wird eine äquivalente Anwendung mit grafischen Nutzerschnittstellen
+ (GUI) entwickelt, welche eine komfortablere Bedienbarkeit für den Nutzer
+ bieten wird.
+ In Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Vorstellung-des-GUI-Programms"
+
+\end_inset
+
+ erfolgt eine Vorstellung dieses Programms.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\noindent
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Vorstellung-des-Konsolenprogramm"
+
+\end_inset
+
+Vorstellung des Konsolenprogramms XML Builder
+\end_layout
+
+\begin_layout Subsection
+Programmstart mit Übergabe von Konsolenparametern
+\end_layout
+
+\begin_layout Standard
+Mit XML Builder liegt ein Konsolenprogramm für Windows vor, das die zuvor
+ beschriebenen drei Programmteile vereint.
+ Das Programm wird über die Konsole mit dem Aufruf 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{XMLBuilder.exe}
+\end_layout
+
+\end_inset
+
+ gestartet.
+ Beim Aufruf des Programms können bzw.
+ müssen u.U.
+ bestimmte Parameter angegeben werden.
+ Die wesentliche Parameter sind in Tab.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Kommandozeilenparameter-bei-Prog"
+
+\end_inset
+
+ aufgelistet, deren Bedeutung ebenfalls erläutert wird.
+ Mit default wird der initialisierte Wert des Parameters angeben.
+ Es können allerdings noch zusätzliche Parameter gesetzt werden, wie z.B.
+ die Verwendung von Hintergrundbildern, Rotationswinkel der Objekte und
+ noch mehr.
+ Informationen zu deren Verwendung können aus 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OPENCV18.04.2013"
+
+\end_inset
+
+ unter dem Punkt 
+\emph on
+Positive Samples 
+\emph default
+entnommen werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="38" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wert
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bedeutung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-objectmaker
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 0; 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0: Objectmaker wird nicht verwendet,
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1: Objectmaker wird verwendet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-createsamples
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 0; 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0: Createsamples wird nicht verwendet,
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1: Createsamples wird verwendet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-traincascade
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 0; 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0: Traincascade wird nicht verwendet,
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1: Traincascade wird verwendet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-inputDir
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verzeichnispfad in dem die positiven Testbilder
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+liegen,
+\series bold
+ muss 
+\series default
+angegeben werden, wenn das 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Teilprogramm Objectmaker verwendet wird
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-outputFileTXT
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: untitled.txt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichnung der Ausgabedatei des Objectmakers,
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+steht zur Wiederverwendung für Createsamples
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+zur Verfügung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-info
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: untitled.txt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichnung der zu verwendenden TXT-Datei 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+die von Objectmaker erstellt wurde; diese Datei
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+muss 
+\series default
+vorliegen, wenn das Teilprogramm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Createsamples verwendet wird
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-vec
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: untitled.vec
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichnung der VEC-Datei, die von
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Createsamples erzeugt wird; diese Datei
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+muss 
+\series default
+vorliegen, wenn das Teilprogramm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Traincascade verwendet wird
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-w
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Breite bzw.
+ Höhe, auf die der extrahierte Bildteil
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+für die VEC-Datei skaliert wird
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-data
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: classifier
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichnung des Verzeichnisses in dem u.a.
+ die
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+XML-Datei des Klassifikators liegt
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-numPos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzahl der Positiven für das Training
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-numNeg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzahl der Negativen für das Training
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-numStages
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzahl der Stufen des Klassifizieres
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-bg
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bezeichnung der TXT-Datei für die Negativen;
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+muss
+\series default
+ angegeben werden für Traincascade
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-featureType
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: HAAR; LBP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Auswahl des Feature Typs, Haarlike Feature
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+oder Local Binary Pattern (LBP ist schneller!)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-minHitRate
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 0.995
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rate für die richtige Positiverkennung unter den
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Positiven pro Klassifikatorstufe (für alle Stufen gilt:
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+minHitRate ^ numStages)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-maxFalseAlarmRate
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+default: 0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rate für die falsche Positiverkennung unter den
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negativen pro Klassifikatorstufe (für alle Stufen gilt:
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+maxFalseAlarmRate ^ numStages)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Kommandozeilenparameter-bei-Prog"
+
+\end_inset
+
+Kommandozeilenparameter bei Programmstart
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein Programmstart von XML Builder könnte wie in Abb.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Konsolenstart-mit-Parameterüberg"
+
+\end_inset
+
+ aussehen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/10_Projekte/2013/XML Builder/Bilder/Konsolenstart.png
+	lyxscale 50
+	width 15cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Konsolenstart-mit-Parameterüberg"
+
+\end_inset
+
+Konsolenstart mit Parameterübergabe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Benutzung des Teilprogramms 
+\emph on
+Objectmaker
+\end_layout
+
+\begin_layout Standard
+Es besteht die Möglichkeit nur das Teilprogramm 
+\emph on
+Objectmaker 
+\emph default
+auszuführen.
+ Dazu sollte der Konsolenparameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-objectmaker}
+\end_layout
+
+\end_inset
+
+ auf 1 gesetzt werden, da zunächst alle drei Teilprogramm ausgeschaltet
+ (0) sind.
+ Die Angabe des Konsolenparameters 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-inputDir}
+\end_layout
+
+\end_inset
+
+ ist dann zwingend erforderlich, da aus diesem Verzeichnis die positiven
+ Testbilder zur Anzeige und Merkmalsextraktion verwendet werden.
+ Die Angabe des Parameters 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-outputFileTXT}
+\end_layout
+
+\end_inset
+
+ ist optional.
+ Sollte hier keine explizite Angabe erfolgen, so wird die vom Teilprogramm
+ 
+\emph on
+Objectmaker
+\emph default
+ erzeugte Ausgabedatei mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{untitled.txt}
+\end_layout
+
+\end_inset
+
+ bezeichnet.
+ Eine sinnvolle Bezeichnung der Ausgabedatei ist empfehlenswert, da diese
+ für das Teilprogramm 
+\emph on
+Createsamples 
+\emph default
+anschließend immer wieder verwendet werden kann.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Achtung: 
+\series default
+Eine bereits vorhandenen Ausgabedatei (*.txt) wird durch die Ausführung von
+ 
+\emph on
+Objectmaker 
+\emph default
+ersetzt.
+ Um dies zu verhindern, sollte über den Parameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-outputFileTXT}
+\end_layout
+
+\end_inset
+
+ eine andere Bezeichnung angegeben werden.
+\end_layout
+
+\begin_layout Standard
+Ein Programmstart könnte wie in Abb.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Start-des-Teilprogramms"
+
+\end_inset
+
+ aussehen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/10_Projekte/2013/XML Builder/Bilder/OnlyObjectmaker.png
+	lyxscale 50
+	width 15cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Start-des-Teilprogramms"
+
+\end_inset
+
+Start des Teilprogramms 
+\emph on
+Objectmaker
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Anschließend werden die Bilder angezeigt, die sich im Verzeichnis befinden,
+ welches mit dem Parameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-inputDir}
+\end_layout
+
+\end_inset
+
+ angegeben wurde.
+ Der Nutzer kann nun aus den Bildern das gewünschte Merkmal extrahieren.
+ Dazu wird mit der 
+\begin_inset Quotes gld
+\end_inset
+
+Maus
+\begin_inset Quotes grd
+\end_inset
+
+ ein Rechteck um den entsprechenden Bildausschnitt gezogen.
+ Danach muss mit der 
+\begin_inset Quotes gld
+\end_inset
+
+Leertaste
+\begin_inset Quotes grd
+\end_inset
+
+ eine Bestätigung des Bildausschnittes erfolgen.
+ Mit der Taste 
+\begin_inset Quotes gld
+\end_inset
+
+b
+\begin_inset Quotes grd
+\end_inset
+
+ wird der bestätigte Bildauschnitt in der Ausgabedatei festgehalten und
+ das nächste Bild angezeigt.
+ Über die 
+\begin_inset Quotes gld
+\end_inset
+
+ESC
+\begin_inset Quotes grd
+\end_inset
+
+-Taste kann die Ausführung des Programms abgebrochen werden.
+ Informationen zum Aufbau der Ausgabedatei können in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Degenkolbe2012"
+
+\end_inset
+
+ nachgelesen werden.
+\end_layout
+
+\begin_layout Standard
+In Abb.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Beispiel-für-Objectmaker"
+
+\end_inset
+
+ wird beispielsweise eine Lichtsignalanlage im Zustand 
+\begin_inset Quotes gld
+\end_inset
+
+grün
+\begin_inset Quotes grd
+\end_inset
+
+ extrahiert.
+ Symbolisiert wird der gewählte Bildausschnitt durch ein magenta farbenes
+ Rechteck.
+ In der Kopfzeile des Fensters befinden sich kurze Informationen zur Programmste
+uerung bzgl.
+ der oben erwähnten Tasten.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/10_Projekte/2013/XML Builder/Bilder/BspObjectmaker.png
+	lyxscale 50
+	width 15cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Beispiel-für-Objectmaker"
+
+\end_inset
+
+Beispiel für 
+\emph on
+Objectmaker
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Benutzung des Teilprogramms 
+\emph on
+Createsamples
+\end_layout
+
+\begin_layout Standard
+Um nur das Teilprogramm 
+\emph on
+Createsamples 
+\emph default
+zu nutzen, muss der Konsolenparamter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-createsamples}
+\end_layout
+
+\end_inset
+
+ auf 1 gesetzt werden.
+ Für eine Programmausführung muss dann aber eine mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{untitled.txt}
+\end_layout
+
+\end_inset
+
+ bezeichnete oder die mit dem Parameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-info}
+\end_layout
+
+\end_inset
+
+ angegebene Datei (Ausgabedatei von 
+\emph on
+Objectmaker
+\emph default
+) vorhanden sein.
+ Die Angabe einer Bezeichnung für die von 
+\emph on
+Createsamples
+\emph default
+ erzeugte Ausgabedatei ist ebenfalls wieder optional.
+ Sollte keine Angabe erfolgen, so wird die Datei 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{untitled.vec}
+\end_layout
+
+\end_inset
+
+ genannt.
+ Auch hier ist eine sinnvolle Bezeichnung zu empfehlen, da diese für das
+ Teilprogramm 
+\emph on
+Traincascade
+\emph default
+ immer wieder genutzt werden kann.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Achtung: 
+\series default
+Eine bereits vorhandenen Ausgabedatei (*.vec) wird durch die Ausführung von
+ 
+\emph on
+Createsamples 
+\emph default
+ersetzt.
+ Um dies zu verhindern, sollte über den Parameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-vec}
+\end_layout
+
+\end_inset
+
+ eine andere Bezeichnung angegeben werden.
+\end_layout
+
+\begin_layout Standard
+Die Angabe der Parameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-w}
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-h}
+\end_layout
+
+\end_inset
+
+ ist optional.
+ Sollte keine Angabe erfolgen, wird jeweils der Wert 24 verwendet.
+ Diese Werte legen fest, auf welche einheitliche Bildgröße die extrahierten
+ Bildausschnitte skaliert werden, die sich in der *.txt-Ausgabedatei von
+ 
+\emph on
+Objectmaker
+\emph default
+ befinden.
+\end_layout
+
+\begin_layout Standard
+Eine Ausführung des Teilprogramms 
+\emph on
+Createsamples 
+\emph default
+könnte wie in Abb.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Start-des-Teilprogramms-Creates"
+
+\end_inset
+
+ aussehen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/10_Projekte/2013/XML Builder/Bilder/OnlyCreatesamples.png
+	lyxscale 50
+	width 15cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Start-des-Teilprogramms-Creates"
+
+\end_inset
+
+Start des Teilprogramms 
+\emph on
+Createsamples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Benutzung des Teilprogramms 
+\emph on
+Traincascade
+\end_layout
+
+\begin_layout Standard
+Wenn man nur das Teilprogramm 
+\emph on
+Traincascade 
+\emph default
+nutzen möchte, sollte der Konsolenparamter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-traincascade}
+\end_layout
+
+\end_inset
+
+ auf 1 gesetzt werden.
+ Für eine Programmausführung muss eine mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{untitled.vec}
+\end_layout
+
+\end_inset
+
+ bezeichnete oder die mit dem Parameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-vec}
+\end_layout
+
+\end_inset
+
+ angegebene Datei (Ausgabedatei von 
+\emph on
+Createsamples
+\emph default
+)
+\emph on
+ 
+\emph default
+vorhanden sein.
+ Zudem muss die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{*.txt}
+\end_layout
+
+\end_inset
+
+ Datei für die negativen Bilder existieren, die mit dem Parameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-bg}
+\end_layout
+
+\end_inset
+
+ anzugeben ist.
+ Die Angabe einer Bezeichnung für das Verzeichnis, indem die Datei mit dem
+ Namen 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{cascade.xml}
+\end_layout
+
+\end_inset
+
+ abgelegt wird, ist optional.
+ Sollte keine Angabe erfolgen, so wird der Ordner 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{classifier}
+\end_layout
+
+\end_inset
+
+ genannt.
+ In diesem Verzeichnis befinden sich zudem noch andere XML-Dateien.
+ In diesen befinden sich Angaben zu den Parametern, die für das Training
+ des Klassifizierers gewählt wurden und die Zwischenstufen des Trainings.
+ Genauere Informationen können in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OPENCV18.04.2013"
+
+\end_inset
+
+ eingesehen werden.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Achtung: 
+\series default
+Eine bereits vorhandener Klassifikator (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{cascade.xml}
+\end_layout
+
+\end_inset
+
+) wird durch die Ausführung von 
+\emph on
+Traincascade 
+\emph default
+ersetzt.
+ Um dies zu verhindern, sollte über den Parameter 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{-data}
+\end_layout
+
+\end_inset
+
+ eine eigene Bezeichnung angegeben werden, sodass ein neues Verzeichnis
+ für den Klassifikator angelegt wird.
+\end_layout
+
+\begin_layout Standard
+Eine Ausführung des Teilprogramms 
+\emph on
+Traincascade 
+\emph default
+könnte wie in Abb.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Start-des-Teilprogramms-Train"
+
+\end_inset
+
+ aussehen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/10_Projekte/2013/XML Builder/Bilder/OnlyTraincascade.png
+	lyxscale 50
+	width 15cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Start-des-Teilprogramms-Train"
+
+\end_inset
+
+Start des Teilprogramms 
+\emph on
+Traincascade
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Vorstellung-des-GUI-Programms"
+
+\end_inset
+
+Vorstellung des GUI-Programms XML Builder
+\end_layout
+
+\begin_layout Subsection
+
+\emph on
+Programmstart
+\end_layout
+
+\begin_layout Standard
+Das Programm wird durch 
+Aufruf der Datei 
+\lang ngerman
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{XML_Builder.exe}
+\end_layout
+
+\end_inset
+
+ gestartet.
+ Anschließend hat der Nutzer drei Möglichkeiten.
+ Er kann ein neues Projekt anlegen, ein bereits vorhandenes Projekt öffnen
+ oder das Programm wieder beenden.
+ Es erscheint dazu das folgende Fenster.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/GitHub/XMLBuilder/Dokumentation/Bilder/StartForm.png
+	lyxscale 50
+	width 6cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Start GUI-Programm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Möchte man ein neues Projekt anlegen, so muss der Nutzer zunächst ein Verzeichni
+s auswählen, indem das neue Projekt angelegt wird.
+ Anschließend sollte ein passender Projektname vergeben werden.
+ Wird kein Projektname vergeben, so wird das Projekt mit 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{Untitled}
+\end_layout
+
+\end_inset
+
+ bezeichnet.
+ Sollte der Projektname bereits vergeben sein, so wird am Ende der Bezeichnung
+ eine Zahl (1,2,...) angehangen, je nach dem wie oft diese Projektbezeichnung
+ bereits existiert.
+ Die höchste Zahl steht dann für das aktuell angelegte Projekt.
+ Anschließend wird in einer Messagebox der Verzeichnispfad zum angelegten
+ Projekt nochmal ausgegeben.
+\end_layout
+
+\begin_layout Standard
+Möchte man ein vorhandenes Projekt öffnen, so muss der Nutzer den entsprechenden
+ Projektordner auswählen.
+ Danach wird ebenfalls in einer Messagebox der Verzeichnispfad zum gewählten
+ Projekt nochmal ausgegeben.
+\end_layout
+
+\begin_layout Subsection
+Benutzung des Teilprogramms 
+\emph on
+Objectmaker
+\end_layout
+
+\begin_layout Standard
+Beim Teilprogramm 
+\emph on
+Objectmaker
+\emph default
+ muss ein 
+\series bold
+Verzeichnispfad
+\series default
+ angegeben werden, indem sich die positiven Testbilder befinden.
+ Voreingestellt ist hier zunächst das Projektverzeichnis mit dem Unterverzeichni
+s 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{./Testbilder}
+\end_layout
+
+\end_inset
+
+.
+ In diesem befinden sich die Bilder, die durch das Teilprogramm 
+\emph on
+Testbilder
+\emph default
+ erzeugt werden.
+ Das Teilprogramm 
+\emph on
+Testbilder 
+\emph default
+wurde allerdings noch nicht implementiert, so dass das Unterverzeichnis
+ zunächst leer ist.
+ Man kann als Testbilder aber auch ein beliebiges anderes Verzeichnis wählen,
+ indem sich Bilder mit dem interessierenden Merkmal befinden.
+\end_layout
+
+\begin_layout Standard
+Weiterhin sollte eine angemessene Bezeichnung der 
+\series bold
+Ausgabedatei 
+\series default
+erfolgen, da diese im Weiteren wiederverwendet wird.
+ Voreingestellt ist hier die Bezeichnung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{untitled.txt}
+\end_layout
+
+\end_inset
+
+.
+ Die Ausgabedatei des Teilprogramms 
+\emph on
+Objectmaker
+\emph default
+ wird für das nächste Teilprogramm 
+\emph on
+Createsamples
+\emph default
+ als Eingabedatei benötigt.
+\end_layout
+
+\begin_layout Standard
+Durch Betätigung des 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{Start}
+\end_layout
+
+\end_inset
+
+-Buttons wird das erste Bild aus dem Verzeichnispfad der Testbilder angezeigt.
+ Mit der Maus kann das interessierende Merkmal aus dem Testbild extrahiert
+ werden.
+ Dazu wird mit der linken Maustaste der linke obere Eckpunkt und danach
+ mit der rechten Maustaste der untere rechte Eckpunkt eines Rechtecks festgelegt.
+ Mit dem Button 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{Bestätigen}
+\end_layout
+
+\end_inset
+
+ wird der gewählte Bildbereich in die Ausgabedatei geschrieben, so wie es
+ in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Degenkolbe2012"
+
+\end_inset
+
+ erläutert wird.
+ MIt dem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{Weiter}
+\end_layout
+
+\end_inset
+
+-Button wird das nächste Bild aus dem Verzeichnispfad der Testbilder dargestellt.
+ Mit dem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{Stop}
+\end_layout
+
+\end_inset
+
+-Button kann das Teilprogramm beendet werden.
+ In Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Beispiel-für-GUI-Objectmaker"
+
+\end_inset
+
+ wird ein Beispiel zur Extrahierung einer Lichtsignalanlage im Zustand 
+\begin_inset Quotes gld
+\end_inset
+
+grün
+\begin_inset Quotes grd
+\end_inset
+
+ gezeigt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/GitHub/XMLBuilder/Dokumentation/Bilder/ObjectmakerForm.png
+	lyxscale 50
+	width 17cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Beispiel-für-GUI-Objectmaker"
+
+\end_inset
+
+Beispiel für GUI-Objectmaker
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Benutzung des Teilprogramms 
+\emph on
+Createsamples
+\emph default
+ 
+\end_layout
+
+\begin_layout Standard
+Der Nutzer hat beim Teilprogramm 
+\emph on
+Createsamples 
+\emph default
+vier Parameter zu wählen.
+ Die 
+\series bold
+Eingabedatei 
+\series default
+ist eine 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{*.txt}
+\end_layout
+
+\end_inset
+
+ Datei, die durch das vorhergehende Teilprogramm 
+\emph on
+Objectmaker 
+\emph default
+erzeugt wurde.
+ In dieser befinden sich die interessierenden Bildausschnitte aus den positiven
+ Testbildern, aus denen eine 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{*.vec}
+\end_layout
+
+\end_inset
+
+ Datei erzeugt wird, deren Name mit dem Parameter 
+\series bold
+Ausgabedatei 
+\series default
+bestimmt wird.
+ Dieser sollte sinnvoll vergeben werden, da diese Datei im nachfolgenden
+ Teilprogramm 
+\emph on
+Traincascade 
+\emph default
+wieder verwendet wird.
+ Die 
+\series bold
+Breite und Höhe der Skalierung
+\series default
+ des ausgewählten Bildausschnittes kann im Bereich von 10 bis 50 Pixel angegeben
+ werden.
+ Voreingestellt sind hier jeweils 24 Pixel.
+\end_layout
+
+\begin_layout Standard
+Durch Betätigung des 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{Start}
+\end_layout
+
+\end_inset
+
+-Buttons wird durch die Programmbibliothek OpenCV eine 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{*.vec}
+\end_layout
+
+\end_inset
+
+ Datei erzeugt.
+ 
+\end_layout
+
+\begin_layout Standard
+>> Hier gibt es allerdings Probleme beim Einbinden der Funktionen aus der
+ externen Bibliothek in das Qt-Projekt.
+ <<
+\end_layout
+
+\begin_layout Standard
+In Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Beispiel-für-GUI-Creatsamples"
+
+\end_inset
+
+ wird das Teilprogramm 
+\emph on
+Createsamples 
+\emph default
+dargestellt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/GitHub/XMLBuilder/Dokumentation/Bilder/CreatesamplesForm.png
+	lyxscale 50
+	width 17cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Beispiel-für-GUI-Creatsamples"
+
+\end_inset
+
+Beispiel für GUI-Creatsamples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Benutzung des Teilprogramms 
+\emph on
+Traincascade
+\end_layout
+
+\begin_layout Standard
+Bei der Benutzung des Teilprogramms 
+\emph on
+Traincascade 
+\emph default
+sind neun Parameter zu wählen.
+ Die Bedeutung der einzelnen Parameter kann aus Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Kommandozeilenparameter-bei-Prog"
+
+\end_inset
+
+ entnommen werden.
+ Durch Betätigung des 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{Start}
+\end_layout
+
+\end_inset
+
+-Buttons wird durch die Programmbibliothek OpenCV das Training zur Erzeugung
+ einer 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{*.xml}
+\end_layout
+
+\end_inset
+
+ Datei ausgeführt.
+ 
+\end_layout
+
+\begin_layout Standard
+>> Hier gibt es allerdings Probleme beim Einbinden der Funktionen aus der
+ externen Bibliothek in das Qt-Projekt.
+ <<
+\end_layout
+
+\begin_layout Standard
+In Abbildung ist das Teilprogramm 
+\emph on
+Traincascade 
+\emph default
+dargestellt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/Administrator/Documents/GitHub/XMLBuilder/Dokumentation/Bilder/TraincascadeForm.png
+	lyxscale 50
+	width 17cm
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Beispiel für GUI-Traincascade
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "LitVzXMLBuilder"
+options "C:/Users/Administrator/Documents/00_Software/JabRef/bstStile/din1505/alphadin"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

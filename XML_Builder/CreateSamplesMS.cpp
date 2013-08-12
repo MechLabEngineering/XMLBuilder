@@ -77,7 +77,7 @@ void CreateSamplesMS::changeW()
     int value = QInputDialog::getInt(this,
                                      "Anzahl der Positiven für das Training eingeben",
                                      "Wert eingeben:",
-                                     10,w,50,1,
+                                     w,10,50,1,
                                      &ok);
     if(ok)
     {
@@ -94,7 +94,7 @@ void CreateSamplesMS::changeH()
     int value = QInputDialog::getInt(this,
                                      "Anzahl der Positiven für das Training eingeben",
                                      "Wert eingeben:",
-                                     10,h,50,1,
+                                     h,10,50,1,
                                      &ok);
     if(ok)
     {
